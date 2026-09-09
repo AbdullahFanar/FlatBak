@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-flatbak">
+    <comment>FlatBak backup</comment>
+    <glob pattern="*.flatbak"/>
+    <!-- Matches the container's magic, see src/backup/container.rs -->
+    <magic priority="60">
+      <match type="string" value="FLATBAK\x1a" offset="0"/>
+    </magic>
+  </mime-type>
+</mime-info>

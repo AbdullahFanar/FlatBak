@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=FlatBak
+GenericName=Flatpak Backup
+Comment=Back up and restore Flatpak applications and their data
+Categories=Utility;Archiving;GTK;
+Exec=flatbak %f
+Icon=io.github.abdullahfanar.FlatBak
+Terminal=false
+Type=Application
+MimeType=application/x-flatbak;
+StartupNotify=true
+Keywords=flatpak;backup;restore;archive;

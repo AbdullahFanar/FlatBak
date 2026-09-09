@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#62a0ea"/>
+      <stop offset="1" stop-color="#1c71d8"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#99c1f1"/>
+      <stop offset="1" stop-color="#3584e4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Archive box. The lid overlaps the body from y=30 to y=56, so the visible
+       face of the box is y=56 to y=108 and its centre is (64, 82). -->
+  <rect x="16" y="44" width="96" height="64" rx="10" fill="url(#body)"/>
+  <rect x="10" y="30" width="108" height="26" rx="8" fill="url(#lid)"/>
+
+  <!-- Latch -->
+  <rect x="54" y="38" width="20" height="10" rx="3" fill="#f6f5f4" opacity="0.9"/>
+
+  <!-- Restore arrow: a clockwise ring of radius 16.5 centred on (64, 82), the
+       centre of the box's visible face rather than of the whole image. It is
+       drawn the long way round from the right of the opening to its left, so
+       the head lands at the top-left travelling clockwise. -->
+  <path d="M73.46 68.48 A16.5 16.5 0 1 1 54.54 68.48"
+        fill="none" stroke="#f6f5f4" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- The head is an isoceles triangle sitting *on* the ring's centreline: its
+       base is centred on the path and its tip runs along the tangent, so it
+       continues the stroke rather than hanging off the outside of it. Stroking
+       it with a round join rounds the three corners, matching the round line
+       caps and the rounded box. -->
+  <path d="M58.55 74.22 L65.18 61.03 L50.52 62.75 Z"
+        fill="#f6f5f4" stroke="#f6f5f4" stroke-width="2" stroke-linejoin="round"/>
+</svg>

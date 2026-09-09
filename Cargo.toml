@@ -1,0 +1,40 @@
+[package]
+name = "flatbak"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+description = "Back up and restore Flatpak applications and their user data"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/AbdullahFanar/FlatBak"
+homepage = "https://github.com/AbdullahFanar/FlatBak"
+categories = ["gui"]
+keywords = ["flatpak", "backup", "gnome", "gtk4"]
+
+[dependencies]
+# GTK4 + Libadwaita. Feature flags pin the minimum API level used, which is
+# well below what current distributions ship.
+gtk = { package = "gtk4", version = "0.11", features = ["v4_12"] }
+adw = { package = "libadwaita", version = "0.9", features = ["v1_6"] }
+
+# Worker-thread to main-loop messaging, driven by glib's async executor.
+async-channel = "2"
+
+# Archive format.
+tar = "0.4"
+zstd = "0.13"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+
+# Integrity checks on the container header and payload.
+sha2 = "0.10"
+crc32fast = "1"
+
+anyhow = "1"
+thiserror = "2"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true

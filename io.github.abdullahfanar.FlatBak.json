@@ -1,0 +1,53 @@
+{
+    "app-id": "io.github.abdullahfanar.FlatBak",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "50",
+    "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
+    "command": "flatbak",
+    "finish-args": [
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+
+        "--talk-name=org.freedesktop.Flatpak",
+        "--filesystem=~/.var/app/",
+        "--filesystem=/var/lib/flatpak/:ro",
+        "--filesystem=~/.local/share/flatpak/:ro"
+    ],
+    "build-options": {
+        "append-path": "/usr/lib/sdk/rust-stable/bin",
+        "env": {
+            "CARGO_HOME": "/run/build/flatbak/cargo",
+            "CARGO_NET_OFFLINE": "true"
+        }
+    },
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/man",
+        "*.la",
+        "*.a"
+    ],
+    "modules": [
+        {
+            "name": "flatbak",
+            "buildsystem": "simple",
+            "build-commands": [
+                "make install PREFIX=/app"
+            ],
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                },
+                "generated-sources.json"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.abdullahfanar.FlatBak</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>FlatBak</name>
+  <summary>Back up and restore your Flatpak applications</summary>
+
+  <description>
+    <p>
+      FlatBak makes one job easy: you reinstalled Linux, and you want your
+      Flatpak applications and their data back.
+    </p>
+    <p>
+      Pick the applications to save, decide separately whether to include each
+      one's data, and write everything to a single portable .flatbak file. On the
+      new system, open that file, choose what to bring back, and FlatBak
+      reinstalls the applications from their remotes and puts their data back
+      where it belongs.
+    </p>
+    <p>
+      FlatBak is deliberately not a whole-system backup tool. It covers Flatpak
+      applications and the data under ~/.var/app, and nothing else.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.abdullahfanar.FlatBak.desktop</launchable>
+
+  <developer id="io.github.abdullahfanar">
+    <name>Abdullah AL-Swedi</name>
+  </developer>
+
+  <url type="homepage">https://github.com/AbdullahFanar/FlatBak</url>
+  <url type="bugtracker">https://github.com/AbdullahFanar/FlatBak/issues</url>
+  <url type="vcs-browser">https://github.com/AbdullahFanar/FlatBak</url>
+
+  <provides>
+    <mediatype>application/x-flatbak</mediatype>
+  </provides>
+
+  <categories>
+    <category>Utility</category>
+    <category>Archiving</category>
+  </categories>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/AbdullahFanar/FlatBak/main/data/screenshots/01-home.png</image>
+      <caption>Choosing to back up or restore</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AbdullahFanar/FlatBak/main/data/screenshots/02-backup-select.png</image>
+      <caption>Selecting which applications to back up</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AbdullahFanar/FlatBak/main/data/screenshots/02b-backup-expanded.png</image>
+      <caption>Choosing whether to include an application's data</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AbdullahFanar/FlatBak/main/data/screenshots/03-restore-select.png</image>
+      <caption>Selecting what to restore from a backup</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AbdullahFanar/FlatBak/main/data/screenshots/04-progress.png</image>
+      <caption>Backing up applications</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/AbdullahFanar/FlatBak/main/data/screenshots/05-result.png</image>
+      <caption>Backup complete, with any issues noted</caption>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.1.0" date="2026-09-10">
+      <description>
+        <p>First release.</p>
+        <ul>
+          <li>Back up installed Flatpak applications, with per-application choice of data</li>
+          <li>Portable .flatbak archives with a versioned manifest and Zstandard compression</li>
+          <li>Restore by reinstalling from remotes, offering to add missing ones</li>
+          <li>Explicit handling of existing application data</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>
